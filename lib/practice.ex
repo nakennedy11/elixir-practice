@@ -18,8 +18,14 @@ defmodule Practice do
 
   def factor(x) do
     # Maybe delegate this too.
-    [1,2,x]
+    #Honetsly Nat this is just rude I really thought it worked for 20
+    Practice.Factor.factor(x)
   end
 
   # TODO: Add a palindrome? function.
+  def palindrome(x) do
+      #not that crazy but going to delegate out because it seems like good practice at least
+    Practice.Palindrome.palindrome(x)
+  end
+    
 end
