@@ -18,11 +18,10 @@ defmodule Practice do
 
   def factor(x) do
     # Maybe delegate this too.
-    Practice.Factor.factor(x)
+    Practice.Factor.factor(x, 2, [])
   end
 
   def palindrome(x) do
-      #not that crazy but going to delegate out because it seems like good practice at least
     Practice.Palindrome.palindrome(x)
   end
     

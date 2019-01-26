@@ -4,7 +4,6 @@
 
     <h2>Palindrome</h2>
 
-    <!-- # TODO fill out this fuckin old thang -->
     <p>String <%= @x %> is a palindrome: <%= @y %> </p>
 
   </div>
