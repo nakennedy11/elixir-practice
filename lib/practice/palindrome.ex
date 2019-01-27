@@ -4,9 +4,10 @@ defmodule Practice.Palindrome do
     num
   end
 
-  def palindrome(x) do
+  def pal?(x) do
       #check if forward = backwards
-      x == rev_words(x)
+      lower = String.downcase(x)
+      x == rev_words(lower)
   end
 
   def rev_words(x) do

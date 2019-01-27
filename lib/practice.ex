@@ -22,7 +22,7 @@ defmodule Practice do
   end
 
   def palindrome(x) do
-    Practice.Palindrome.palindrome(x)
+    Practice.Palindrome.pal?(x)
   end
     
 end
