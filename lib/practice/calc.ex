@@ -38,16 +38,16 @@ defmodule Practice.Calc do
   def eval_add_sub([{:num, leftnum}, {:op, op}, {:num, rightnum} | rest]) do
       cond do
       	 op == "+" ->
-      	    eval_mult_div([{:num, leftnum + rightnum}] ++ rest)
+      	    eval_add_sub([{:num, leftnum + rightnum}] ++ rest)
       	 op == "-" ->
-      	    eval_mult_div([{:num, leftnum - rightnum}] ++ rest)
+      	    eval_add_sub([{:num, leftnum - rightnum}] ++ rest)
       	 true ->
 	    [{:num, leftnum}, {:op, op}] ++ eval_add_sub([{:num, rightnum}] ++ rest)
       end   	  
   end
 
   def eval_add_sub([car | cdr]) do
-      [car] ++ eval_mult_div(cdr)
+      [car] ++ eval_add_sub(cdr)
   end
 
   def eval_add_sub([]) do
@@ -59,8 +59,6 @@ defmodule Practice.Calc do
   end
        	  
   def calc(expr) do
-    # This should handle +,-,*,/ with order of operations,
-    # but doesn't need to handle parens.
     expr
     |> String.split(~r/\s+/) # tokenize
     |> tag_tokens	     # parse
